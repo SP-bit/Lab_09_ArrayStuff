@@ -1,15 +1,29 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+import java.util.Random;
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        int[] dataPoints;
+        dataPoints = new int[100];
+        Random rnd = new Random();
+        for(int x = 0; x < dataPoints.length; x++)
+        {
+            dataPoints[x] = rnd.nextInt(100) + 1;
         }
+        for(int x = 0; x < dataPoints.length; x++)
+        {
+            System.out.print(dataPoints[x] + " | ");
+        }
+        double sum = 0;
+        for(int x = 0; x < dataPoints.length; x++)
+        {
+            sum = sum + dataPoints[x];
+        }
+        double avg = sum / dataPoints.length;
+        System.out.println("\nThe sum of the random array dataPoints is: " + sum);
+        System.out.println("The average of the random array dataPoints: " + avg);
+
     }
 }
